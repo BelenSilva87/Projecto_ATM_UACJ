@@ -20,8 +20,8 @@ int main()
     {
         char titular[150];
         char saldoTexto[150];
-        char pin[10];       // Tamaño ampliado para mayor seguridad
-        char pinInput[10];  // Tamaño ampliado para mayor seguridad
+        char pin[10];       // TamaÃ±o ampliado para mayor seguridad
+        char pinInput[10];  // TamaÃ±o ampliado para mayor seguridad
         FILE *archivo;
         char nombreCompleto[150];
 
@@ -43,17 +43,17 @@ int main()
             scanf("%s", pinInput);
             printf("\n");
 
-            // --- LÍNEA 1: Titular ---
+            // --- Lï¿½NEA 1: Titular ---
             fgets(titular, 150, archivo);
-            titular[strcspn(titular, "\n")] = 0; // Se limpia el salto de línea invisible
+            titular[strcspn(titular, "\n")] = 0; // Se limpia el salto de linea invisible
 
-            // --- LÍNEA 2: Saldo ---
+            // --- Lï¿½NEA 2: Saldo ---
             fgets(saldoTexto, 150, archivo);
-            saldo1 = atof(saldoTexto); // Se convierte el texto a número decimal (float)
+            saldo1 = atof(saldoTexto); // Se convierte el texto a numero decimal (float)
 
-            // --- LÍNEA 3: PIN del archivo ---
+            // --- Lï¿½NEA 3: PIN del archivo ---
             fgets(pin, 10, archivo);
-            pin[strcspn(pin, "\n")] = 0; // Se limpia el salto de línea invisible
+            pin[strcspn(pin, "\n")] = 0; // Se limpia el salto de linea invisible
 
             if (strcmp(pinInput, pin) == 0)
             {
@@ -66,7 +66,6 @@ int main()
                 printf("Error: PIN incorrecto. Acceso denegado.\n");
             }
 
-            // Muy importante: ¡Siempre cerrar el archivo!
             fclose(archivo);
         }
 
