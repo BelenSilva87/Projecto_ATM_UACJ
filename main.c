@@ -349,6 +349,66 @@ void realizarDeposito() {
 }
 
 // ============================================
+// 5. crear cuenta - dar de alta nuevo cliente
+// ============================================
+
+void crearCuenta() {
+    int numCuenta;
+    char titular[150];
+    float saldoInicial;
+    char pin[10];
+    char nombreCompleto[150];
+    FILE *archivo;
+    
+    printf("\n--- DAR DE ALTA NUEVA CUENTA ---\n");
+    printf("Escriba el numero para la nueva cuenta: ");
+    scanf("%d", &numCuenta);  // pide el numero de cuenta
+    limpiarBuffer();
+    
+    if (cuentaExiste(numCuenta)) {
+        printf("Error: La cuenta ya existe. Intente con otro numero.\n");
+        return;
+    }
+    
+    printf("Nombre del titular: ");
+    fgets(titular, 150, stdin);  // lee el nombre completo
+    titular[strcspn(titular, "\n")] = 0;  // quita el enter
+    
+    printf("Monto de deposito inicial: $");
+    scanf("%f", &saldoInicial);  // pide el saldo inicial
+    limpiarBuffer();
+    
+    if (saldoInicial < 0) {
+        printf("Error: El saldo inicial no puede ser negativo.\n");
+        return;
+    }
+    
+    printf("Cree su PIN (4 digitos): ");
+    scanf("%s", pin);  // pide el nuevo pin
+    limpiarBuffer();
+    
+    if (strlen(pin) != 4) {
+        printf("Error: El PIN debe tener exactamente 4 digitos.\n");
+        return;
+    }
+    
+    // crea el archivo de la cuenta nueva
+    sprintf(nombreCompleto, "cuenta%d.txt", numCuenta);
+    archivo = fopen(nombreCompleto, "w");
+    fprintf(archivo, "%s\n", titular);
+    fprintf(archivo, "%.2f\n", saldoInicial);
+    fprintf(archivo, "%s\n", pin);
+    fclose(archivo);
+    
+    // registra el primer movimiento
+    registrarTransaccion(numCuenta, "APERTURA", saldoInicial, "Apertura de cuenta");
+    
+    printf("\n--- CUENTA CREADA EXITOSAMENTE ---\n");
+    printf("Bienvenido %s al Banco Central UACJ\n", titular);
+    printf("Su numero de cuenta es: %d\n", numCuenta);
+}
+
+// ============================================
 // programa principal 
 // ============================================
 
@@ -366,7 +426,8 @@ int main() {
         printf("2. Realizar transferencia bancaria\n");  // opcion 2
         printf("3. Cambiar PIN\n");            // opcion 3
         printf("4. Realizar deposito\n");      // opcion 4
-        printf("5. Salir\n");                  // opcion 5
+        printf("5. Dar de alta nueva cuenta\n"); // opcion 5
+        printf("6. Salir\n");                  // opcion 6
         printf("----------------------------------------\n");
         printf("Opcion a escoger --> ");
         scanf("%d", &opt);  // lee lo que elige el usuario
@@ -387,14 +448,17 @@ int main() {
                 realizarDeposito();  // va a depositar
                 break;
             case 5:
+                crearCuenta(); // va a crear cuenta
+                break;
+            case 6:
                 printf("\nGracias por usar el sistema ATM del Banco Central UACJ\n");
                 printf("Sesion finalizada exitosamente.\n");  // se despide
                 break;
             default:
-                printf("Opcion no valida. Por favor, seleccione una opcion del 1 al 5.\n");
+                printf("Opcion no valida. Por favor, seleccione una opcion del 1 al 6.\n");
                 break;
         }
-    } while (opt != 5);  // repite hasta que el usuario elija 5 (salir)
+    } while (opt != 6);  // repite hasta que el usuario elija 6 (salir)
     
     return 0;  // fin del programa
 }

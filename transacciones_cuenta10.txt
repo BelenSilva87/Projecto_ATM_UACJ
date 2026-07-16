@@ -1,0 +1,3 @@
+[2026-07-15 22:48:41] APERTURA: $1000.00 - Apertura de cuenta
+[2026-07-15 22:48:47] CONSULTA: $0.00 - Consulta de saldo
+[2026-07-15 22:49:34] TRANSFERENCIA ENVIO: $200.00 - Transferencia a cuenta 4
