@@ -1,0 +1,2 @@
+[2026-07-15 22:56:31] APERTURA: $34092.00 - Apertura de cuenta
+[2026-07-15 22:56:42] CONSULTA: $0.00 - Consulta de saldo

@@ -1,3 +1,8 @@
 [2026-07-15 22:48:41] APERTURA: $1000.00 - Apertura de cuenta
 [2026-07-15 22:48:47] CONSULTA: $0.00 - Consulta de saldo
 [2026-07-15 22:49:34] TRANSFERENCIA ENVIO: $200.00 - Transferencia a cuenta 4
+[2026-07-15 22:54:37] CONSULTA: $0.00 - Consulta de saldo
+[2026-07-15 22:54:58] TRANSFERENCIA RECIBO: $300.00 - Transferencia desde cuenta 1
+[2026-07-15 22:55:14] CAMBIO PIN: $0.00 - Cambio de PIN
+[2026-07-15 22:55:19] CONSULTA: $0.00 - Consulta de saldo
+[2026-07-15 22:55:30] DEPOSITO: $500.00 - Deposito en efectivo
