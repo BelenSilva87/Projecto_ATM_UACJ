@@ -1,0 +1,11 @@
+[2026-07-15 17:44:47] CONSULTA: $0.00 - Consulta de saldo
+[2026-07-15 17:45:38] TRANSFERENCIA ENVIO: $150.00 - Transferencia a cuenta 4
+[2026-07-15 17:46:13] DEPOSITO: $50000.00 - Depósito en efectivo
+[2026-07-15 18:14:32] CONSULTA: $0.00 - Consulta de saldo
+[2026-07-15 18:15:12] CAMBIO PIN: $0.00 - Cambio de PIN
+[2026-07-15 18:15:43] TRANSFERENCIA ENVIO: $2333.00 - Transferencia a cuenta 1
+[2026-07-15 19:32:27] DEPOSITO: $10222.00 - Deposito en efectivo
+[2026-07-15 19:33:02] CAMBIO PIN: $0.00 - Cambio de PIN
+[2026-07-15 19:33:41] CONSULTA: $0.00 - Consulta de saldo
+[2026-07-15 21:49:26] CONSULTA: $0.00 - Consulta de saldo
+[2026-07-15 21:49:47] TRANSFERENCIA ENVIO: $5266.00 - Transferencia a cuenta 4
